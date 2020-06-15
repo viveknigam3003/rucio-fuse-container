@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+    ruciofs:
+            #volumes:
+            #- '/var/lib/docker/volumes/ruciofs_test/_data:/home'
+        ports:
+            - '8080:8080'
+        container_name: dev_ruciofs_1
+        network_mode: dev_default
+        devices:
+            - /dev/fuse
+        privileged: true
+        hostname: ruciofs
+        image: ruciofs:test
+        tty: true
+        restart: always
